@@ -3,10 +3,7 @@ import React, { useState } from 'react';
 const ImageSearch = ({ searchText }) => {
   const [text, setText] = useState('');
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    searchText(text);
-  }
+  const onSubmit=useEffect(()=>{searchText(text)},[text])
 
   return (
     <div className='max-w-sm rounded overflow-hidden my-10 mx-auto'>
